@@ -1,0 +1,30 @@
+[requires]
+gflags/2.2.2
+tensorflow-lite/2.12.0
+fmt/9.1.0
+opencv/4.5.5
+openssl/1.1.1s
+cocoyaxi/2.0.3
+eigen/3.4.0
+[options]
+#cocoyaxi:shared=True
+cocoyaxi:with_libcurl=True
+cocoyaxi:with_openssl=True
+vulkan-loader:with_wsi_xlib=False
+pulseaudio:with_x11=False
+libx264:disable_asm=True
+ffmpeg:with_asm=False
+ffmpeg:with_vulkan=False
+ffmpeg:with_xcb=False
+ffmpeg:with_vaapi=False
+ffmpeg:with_vdpau=False
+libwebp:shared=True
+opencv:shared=True
+opencv:with_gtk=False
+opencv:with_tiff=False
+opencv:with_webp=False
+[generators]
+cmake
+[imports]
+bin, *.so -> ./bin # Copies all dll files from packages bin folder to my "bin" folder
+lib, *.so* -> ./bin # Copies all dylib files from packages lib folder to my "bin" folder
